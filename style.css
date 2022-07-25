@@ -1,3 +1,8 @@
+:root {
+  --bg-coord1: 100%;
+  --bg-coord2: 20%;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -31,13 +36,19 @@ body {
 
 /* Header*/
 
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
-  width: 104rem;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding: 0.8rem 0;
+  padding: 0.8rem 1.6rem;
 }
 .logo {
   background-color: #006dfe;
@@ -98,9 +109,8 @@ body {
 /* Account-settings */
 
 .account-settings-bg {
-  width: 96rem;
-  height: 64rem;
-  border-radius: 2rem;
+  width: 100%;
+  flex: 1;
   background: rgb(42, 48, 79);
   background: linear-gradient(
     355deg,
@@ -113,7 +123,7 @@ body {
 
 .account-settings-cont {
   background-image: radial-gradient(
-    farthest-side at 65rem 15rem,
+    farthest-side at var(--bg-coord1) var(--bg-coord2),
     rgba(175, 215, 245, 1) 0%,
     rgba(175, 215, 245, 0.9) 20%,
     rgba(98, 177, 237, 0.45) 50%,
@@ -129,7 +139,6 @@ body {
   overflow: hidden;
   box-shadow: rgba(0, 109, 254, 0.25) 0px 8px 16px -2px,
     rgba(0, 0, 0, 0.4) 0px 3px 7px -3px;
-  transform: translateY(10rem);
 }
 
 .account-seetings-panel p {
@@ -208,4 +217,27 @@ body {
 .acc-panel-footer a:hover,
 .acc-panel-footer a:active {
   color: #006dfe;
+}
+
+@media (min-width: 62em) {
+  /* LG - 992px */
+  :root {
+    --bg-coord1: 65rem;
+    --bg-coord2: 15rem;
+  }
+
+  .app {
+    display: block;
+  }
+
+  .account-settings-bg {
+    width: 96rem;
+    height: 64rem;
+    border-radius: 2rem;
+  }
+
+  .header {
+    width: 104rem;
+    padding: 0.8rem 0;
+  }
 }
